@@ -1,98 +1,117 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Weather App</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Sandra's Portfolio Website">
+<meta name="keywords" content="web, portfolio, data science, software development, web development">
+<meta name="author" content="Sandra Campuzano">
 
-        <div class="card">
-            <div class="search">
-                <input type="text" placeholder="enter city name" spellcheck="false">
-                <button><img src="weather-app-img/images/search.png"></button>
+        <title>Sandra Campuzano's Porfolio</title>
+
+        <link rel="stylesheet" href="styles.css">
+        <script src="slideshow.js"></script>
+        <script async src="https://cse.google.com/cse.js?cx=f4964402c3a3e421a">
+</script>
+    </head>
+
+<body>
+
+        <h1>Sandra Campuzano</h1>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+
+        <li class="dropdown"><button class="dropdownbtn">About</button>
+            <div class="dropdown-content">
+                <a href="aboutme.html">About Me</a>
+                <a href="resume.html">Resume</a>
             </div>
-            <div class="error">
-                <p> Invalid city name</p>
-            </div>
-            <div class="weather">
-                <img src="weather-app-img/images/rain.png" class="weather-icon">
-                <h1 class="temp">22°C</h1>
-                <h2 class="city">New York</h2>
-                <div class="details">
-                    <div class="col">
-                        <img src="weather-app-img/images/humidity.png">
-                        <div>
-                            <p class="humidity">50%</p>
-                            <p>Humidity</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <img src="weather-app-img/images/wind.png">
-                        <div>
-                            <p class="wind">15 km/h</p>
-                            <p>Wind Speed</p>
-                        </div>
-                    </div>
+        </li>
+
+
+            <li class="dropdown"><button class="dropdownbtn">Projects</button>
+                <div class="dropdown-content">
+                    <a href="ffxivpf.html">Interactive Character Profile</a>
+                    <a href="index.html">Python project</a>
+                    <a href="index.html">C++ project</a>
+
                 </div>
-            </div>
+            </li>
+            
+        <div class="iconlinks">
+            <div class="linkspace"><a href="https://github.com/scampuzano7" target="_blank"><img src="images/social.png"></a></div>
+            <div class="linkspace"><a href="https://www.linkedin.com/in/sandraicampuzano/" target="_blank"><img src="images/linkedin.png"></a></div>
+            <div class="linkspace"><a href="https://www.polywork.com/sandra_campuzano" target="_blank"><img src="images/polywork.png"></a></div>
         </div>
 
-        <script>
+    </ul>
 
-const apiKey = "80e6155ee28d41d969fc852be1a0d08f";
-const apiURL="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
-const searchBox = document.querySelector(".search input");
-const searchBtn = document.querySelector(".search button");
-const weatherIcon = document.querySelector(".weather-icon");
+    <div class="sitecontainer">
 
-async function checkWeather(city){
-    const response = await fetch(apiURL + city + `&appid=${apiKey}`);
+        <div class="container">
+            Hello, my name is Sandra Campuzano. I am a beginner software
+            and web developer located in sunny Southern California, USA.
+        </div>
 
-    if(response.status == 404){
-        document.querySelector(".error").style.display = "block";
-        document.querySelector(".weather").style.display = "none";
-    }
-    else {
-        var data = await response.json();
+        <div class="skillcontainer">
 
-document.querySelector(".city").innerHTML = data.name;
-document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+                <div class="cbox">
+                <img src="images/c-.png">
+            </div>
 
-if(data.weather[0].main == "Clouds") {
-    weatherIcon.src = "weather-app-img/images/clouds.png";
-}
-else if(data.weather[0].main == "Clear") {
-    weatherIcon.src = "weather-app-img/images/clear.png";
-}
-else if(data.weather[0].main == "Rain") {
-    weatherIcon.src = "weather-app-img/images/rain.png";
-}
-else if(data.weather[0].main == "Drizzle") {
-    weatherIcon.src = "weather-app-img/images/drizzle.png";
-}
-else if(data.weather[0].main == "Mist") {
-    weatherIcon.src = "weather-app-img/images/mist.png";
-}
-else if(data.weather[0].main == "Snow") {
-    weatherIcon.src = "weather-app-img/images/snow.png";
-}
+                <div class="pybox">
+                <img src="images/python.png">
+            </div>
+            
+                <div class="jsbox">
+                <img src="images/js.png">
+            </div>
 
-document.querySelector(".weather").style.display = "block";
-document.querySelector(".error").style.display = "none";
+            <div class="htmlbox">
+                <img src="images/html-5.png">
+            </div>
 
-    }
+            <div class="cssbox">
+                <img src="images/css-3.png">
+            </div>
 
+          
+
+        </div>
+
+        <div class="slideShow">
+            
+            <div class="mySlides fade">
+                <img src="images/alceriacosplay.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/kittyreaper.JPG" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/motherrose.jpeg" style="width:100%" >
+            </div>
+
+            <a class="prev" onclick="plusDivs(-1)">&#10094;</a>
+            <a class="next" onclick="plusDivs(1)">&#10095;</a>
+
+            <div style="text-align: center;">
+
+            <span class="dot" onclick="currentDiv(1)"></span>
+            <span class="dot" onclick="currentDiv(2)"></span>
+            <span class="dot" onclick="currentDiv(3)"></span>
+
+        </div>
     
-}
-searchBtn.addEventListener("click", ()=>{
-    checkWeather(searchBox.value);
-})
+        </div>
+    
+        </div>
 
-        </script>
-
-    </body>
-</html>
+    <div class="footer">
+        Interactive Character Profile (C) xPR
+    </div>
+    <script> showDivs(slideIndex); </script>
+</body>
