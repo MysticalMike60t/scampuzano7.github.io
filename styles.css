@@ -33,7 +33,7 @@ body{
     border-top: 0.5px solid white;
     width: 85%;
     margin: 0px 100px 0px 100px;
-    position: relative;
+    position: static;
   }
 
 /* Stylization for navigation bar */
@@ -398,7 +398,7 @@ li.dropdown {
   grid-row: 1;
   grid-column: 1/3;
   text-align: center;
-  position: relative;
+  position: relativea;
 }
 
 /* Specifically for the professional section title */
